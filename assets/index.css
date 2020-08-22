@@ -25,11 +25,12 @@ form {
 
 table {
 	background: white;
-	display: flex;
+  display: flex;
+  margin: 0;
 }
 
 td {
-	padding: 2rem 0.5rem;
+	padding: 2rem 1rem;
 	align-self: center;
 	font-size: 14px;
 	line-height: 17px;
@@ -37,8 +38,26 @@ td {
 
 tr {
 	display: flex;
-	justify-items: center;
-	grid-template-columns: repeat(4, 1fr);
-	border-bottom: 1px solid var(--grey-bg);
+	flex-direction: row;
 	padding: 0 2rem;
+}
+
+.delete  {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.score  {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  width: 20px;
+  height: 20px;
+}
+
+ul li {
+  list-style: none;
 }

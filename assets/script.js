@@ -1,29 +1,4 @@
-let songs = [
-    // {
-    //     title: "Misaora",
-    //     artist: "Dadah",
-    //     style: "slow",
-    //     length : 3,
-    //     picture: "https://picsum.photos/200/400",
-    // },
-    // {
-        
-    //     title: "Mbola ho avy",
-    //     artist: "Fety",
-    //     style: "rock",
-    //     length : 5,
-    //     picture: "https://picsum.photos/200/400",
-    // },
-    // {
-        
-    //     title: "Tena izy",
-    //     artist: "Bina",
-    //     style: "dance",
-    //     length : 6,
-    //     picture: "https://picsum.photos/200/400",
-    // },
-];
-
+let songs = [];
 const addSong = document.querySelector('.songs');
 const listOfSong = document.querySelector('table');
 
@@ -32,29 +7,32 @@ const showSongs = () => {
     const html = songs
     .map(song => {
         return`
-        <tr>
           <td>
             <li>${song.picture}</li>
             <li>${song.title}</li>
             <li>${song.style}</li>
-         </td>
+          </td>
          <td>
             <li>${song.artist}</li>
             <li>${song.length}min</li>
          </td>
         </tr>
         <tr>
-          <button value="${song.id}" class="delete">
-            <img src="./assets/trash.svg">
-          </button>
+          <td>
+            <button value="${song.id}" class="delete" aria-label = "remove ${song.title}" alt="delete ${song.title}">
+            &times;
+            </button>
+          <td>
+          <td>
+            <button class="score">+1</button>
+          </td>
         </tr>
-        </ul>
         `;
     })
     .join('');
     listOfSong.innerHTML = html;
 };
-// showSongs();
+
 
 //add the songs by filling the the input
 const addNewSongs = e => {
@@ -76,6 +54,30 @@ const addNewSongs = e => {
     // addNewSongs();
 };
 
+
+const handleClick = e => {
+    //delete a song
+    const deleteBtn = e.target.closest("button.delete");
+    // if the delete btn is clicked
+    if (deleteBtn) {
+        const id = Number(deleteBtn.value);
+        console.log('delete that song');
+        deleteSong(id);
+    }
+};
+
+
+//delete an object from an array
+const deleteSong = id => {
+    //filter the songs array, by taking all the songs 
+    songs = songs.filter((song) => {
+        return song.id !== id
+    });
+    listOfSong.dispatchEvent(new CustomEvent('listUpdated'));
+};
+
+
 //listeners
 addSong.addEventListener('submit',addNewSongs);
 listOfSong.addEventListener('listUpdated', showSongs);
+listOfSong.addEventListener('click', handleClick);
