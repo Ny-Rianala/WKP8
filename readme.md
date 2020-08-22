@@ -42,4 +42,19 @@ Fork this project and then clone your fork to your computer.
 
 I will download everybody's fork on **_Sunday at 5pm_**.
 
-Good luck everyone! 🔥
+Good luck everyone! 🔥  
+
+### Structure
+  - Firstly, I created variables for the list of songs and the form.  
+  - Secondly, I created new function to show the list of songs and put them in the html.
+  - Thirdly, I added a new function to show the value from the input.
+  - Then, I added a function to handle the click in submit button.
+
+### What I have learnt
+  - Today, I learnt how to get the values from input because before I did not know how to access them. 
+
+### Timing
+  - If I had more time, I would continue to work in the increment button and so on. Also, clean the code very well, added more style for css.
+
+### The most challenging part 
+  -For me, it was hard to get the images. I do not really know if it is because the url I added there or not.  
