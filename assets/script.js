@@ -51,7 +51,6 @@ const addNewSongs = e => {
     songs.push(newSong);
     listOfSong.dispatchEvent(new CustomEvent('listUpdated'));
     addForm.reset();
-    // addNewSongs();
 };
 
 
@@ -69,7 +68,7 @@ const handleClick = e => {
 
 //delete an object from an array
 const deleteSong = id => {
-    //filter the songs array, by taking all the songs 
+    //filter the songs array, by taking all the songs using id
     songs = songs.filter((song) => {
         return song.id !== id
     });
