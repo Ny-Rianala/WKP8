@@ -1,0 +1,44 @@
+.add-song-in-parade {
+    background-color: white;
+    display: grid;
+}
+
+.songs {
+  display: flex;
+  flex-direction: column;
+  padding-block-end: 20px;
+}
+
+tr li {
+  list-style: none;
+}
+
+section {
+  box-sizing: content-box;
+  width: fit-content;
+  background-color: whitesmoke;
+}
+
+form {
+  min-width: 100%;
+}
+
+table {
+	background: white;
+	display: flex;
+}
+
+td {
+	padding: 2rem 0.5rem;
+	align-self: center;
+	font-size: 14px;
+	line-height: 17px;
+}
+
+tr {
+	display: flex;
+	justify-items: center;
+	grid-template-columns: repeat(4, 1fr);
+	border-bottom: 1px solid var(--grey-bg);
+	padding: 0 2rem;
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WKP8</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <main>
+      <h1>Hit Parade</h1>
+      <section class="add-song-in-parade">
+        <h2>
+          Add a song
+        </h2>
+        <form class="songs">
+          <fieldset>
+            <label for="title">Song title</label>
+            <input type="text" id="title" name="title" placeholder="title" required> 
+          </fieldset>
+          <fieldset>
+            <label for="artist">Artist name</label>
+            <input type="text" id="artist" placeholder="artist's name" required> 
+          </fieldset>
+          <fieldset>
+						<label for="style">Song styles</label>
+						<select name="style" id="style" required>
+							<option value="slow">Slow</option>
+							<option value="rock">Rock</option>
+							<option value="jazz">Jazz</option>
+							<option value="dance">Dance</option>
+						</select>
+					</fieldset>
+          <fieldset>
+            <label for="lenght">Song length</label>
+            <input type="number" id="length" name="length" placeholder="length" required> 
+          </fieldset>
+          <fieldset>
+            <label for="picture">Artist picture</label>
+            <input type="url" id="picture" name="picture" placeholder="url of the picture" required> 
+          </fieldset>
+          <fieldset>
+						<button type="submit">Add</button>
+					</fieldset>
+        </form>
+      </section>
+      <section>
+        <form>
+          <fieldset>
+            <label for="search">Search a song</label>
+            <input type="text" id="search" name="search" placeholder="Enter a song title" required> 
+          </fieldset>
+          <fieldset>
+						<label for="style">Select a style</label>
+						<select name="style" id="style" required>
+							<option value="slow">Slow</option>
+							<option value="rock">Rock</option>
+							<option value="jazz">Jazz</option>
+							<option value="dance">Dance</option>
+            </select>
+          </fieldset>
+          <fieldset>
+						<button>Reset filter</button>
+					</fieldset>
+        </form>
+      </section>
+      <section>
+        <table></table>
+      </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
