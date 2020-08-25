@@ -1,6 +1,8 @@
 let songs = [];
 const addSong = document.querySelector('.songs');
 const listOfSong = document.querySelector('table');
+const addBtn = document.querySelector('div');
+
 
 //show the list of songs
 const showSongs = () => {
@@ -24,7 +26,8 @@ const showSongs = () => {
             </button>
           <td>
           <td>
-            <button class="score">+1</button>
+            <li class="addBtn">score: 0</li>
+            <button value= "${song.id}"  class="score" arial-label = "add ${song.title}">+1</button>
           </td>
         </tr>
         `;
@@ -75,8 +78,20 @@ const deleteSong = id => {
     listOfSong.dispatchEvent(new CustomEvent('listUpdated'));
 };
 
+//add score
+const handleClickScoreBtn = e => {
+  const addScoreBtn = e.target.closest("button.score");
+  let scoreBtn = 0;
+  // if the score btn is clicked
+  if (addScoreBtn) {
+      console.log('add 1');
+      scoreBtn ++;
+  }
+};
+
 
 //listeners
 addSong.addEventListener('submit',addNewSongs);
 listOfSong.addEventListener('listUpdated', showSongs);
 listOfSong.addEventListener('click', handleClick);
+listOfSong.addEventListener('click', handleClickScoreBtn);
